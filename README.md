@@ -1,13 +1,9 @@
 # ⚡ M&A Signal Intelligence Engine
 ### *Turning Market Chaos into Deal Closing Probability*
 
----
-
 ## 📌 One-Liner
 
 > *A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations.*
-
----
 
 ## 📑 Table of Contents
 
@@ -27,8 +23,6 @@
 14. [Competition Details](#-competition-details)
 15. [License](#-license)
 
----
-
 ## 🎯 The Problem
 
 M&A is fundamentally a **signal interpretation problem under uncertainty**.
@@ -46,8 +40,6 @@ burning months of hard work, lost fees, and, most importantly, clients' confiden
 
 This is an **intelligence** problem. **Agents** can solve it.
 
----
-
 ## 💡 The Solution
 
 The **M&A Signal Intelligence Engine** is a sequential multi-agent system built with Google ADK and powered by **Gemini 2.5 Flash** (with **Gemini 2.5 Flash-Lite** for fast request parsing). It transforms fragmented market signals into actionable buyer intelligence.
@@ -55,8 +47,6 @@ The **M&A Signal Intelligence Engine** is a sequential multi-agent system built 
 It does not simply summarize news. It answers:
 
 > **"Who is actually likely to buy this asset right now, and why?"**
-
----
 
 ## 💎 Value for M&A Teams
 
@@ -66,8 +56,6 @@ It does not simply summarize news. It answers:
 | 🎯 **Deal Close Probability** | Higher competitive tension through better buyer targeting |
 | 🔇 **Noise Reduction** | Fewer irrelevant outreach contacts wasting deal team bandwidth |
 | 🧠 **Decision Intelligence** | Unstructured news transformed into structured, decision-grade output |
-
----
 
 ## 🚀 Quick Start
 
@@ -142,8 +130,6 @@ Total latency                 XXXXXXms
 
 After each run, a full trace is saved to `observability/logs/full_trace.json`, and precedent deals accumulate in `memory/transactions.json`.
 
----
-
 ## 🏗️ Architecture
 
 ### Pipeline
@@ -196,8 +182,6 @@ runs, even for the same target. The candidate pool is **live** – it reflects
 whatever M&A news the web search surfaces at run time – and the **memory bank
 grows with every run**, so buyer profiles become better-informed over time
 (richer deal-size ranges and comparable-deal counts).
-
----
 
 ## 📁 Project Structure
 
@@ -259,8 +243,6 @@ capstone_project/
     └── glossary.md                 ← M&A and pipeline terminology
 ```
 
----
-
 ## 🤖 Agent Pipeline
 
 ### Agent 1 – News Ingestion Agent
@@ -272,8 +254,6 @@ capstone_project/
 | **Input** | Acquisition target (asset class, sector, country) |
 | **Role** | Fetches real-time raw M&A news, press releases, and public announcements relevant to the target |
 | **Output** | A concise list of recent M&A deals, covering 8-10 distinct buyers (one item per buyer), passed downstream via conversation context |
-
----
 
 ### Agent 2 – Signal Extraction Agent
 
@@ -306,8 +286,6 @@ multiple: N/A
 > `target_class` values: `company` · `renewable_portfolio` · `real_estate` · `infra`
 > `target_sector` values: one of **18 sectors** (energy, renewables, technology, telecom, healthcare, …) — see [docs/user_guide.md](docs/user_guide.md) §6.
 
----
-
 ### Agent 3 – Buyer Profiling Agent
 
 | Property | Detail |
@@ -335,8 +313,6 @@ multiple: N/A
 | `comparable_deals_count` | int | Number of comparable deals closed in last 5 years |
 
 **Comparable deals:** each profile also carries a `comparable_deals` list per deal: target, country, transaction year, seller, `ev_eur_m`, and (for renewable portfolios) `capacity_mw` / `ev_mw`. These feed the deterministic scorer's MW-based size matching and recency bonus.
-
----
 
 ### Agent 4 – Deal Matching Agent
 
@@ -370,8 +346,6 @@ multiple: N/A
 - `financial_capacity == 'weak'`
 - `expansion_mode == 'deleveraging'`
 - `expansion_mode == 'divesting'`
-
----
 
 ### Agent 5 – Strategy Agent
 
@@ -408,8 +382,6 @@ boilerplate. On a normal run the gate is inert. See `agents/_gate.py`.
 | Deal Matching → Strategy | Results persisted via `EventActions(state_delta=…)`, injected into the strategy prompt with `{deal_matching_results}` |
 | Target into the pipeline | Seeded into session state at startup by `run.py` (`target_profile`) |
 
----
-
 ## 🧠 Memory
 
 The **Transaction Memory Bank** (`memory/transaction_store.py`) is a long-term store of precedent M&A deals that **persists across runs** as JSON.
@@ -418,8 +390,6 @@ The **Transaction Memory Bank** (`memory/transaction_store.py`) is a long-term s
 - **`search_transactions`** – Agent 3 recalls precedent deals (filter by buyer / sector / country), returned latest-first, to inform deal-size ranges and comparable counts.
 
 Because the bank compounds over time, every subsequent analysis draws on a richer base of precedents.
-
----
 
 ## 📊 Observability
 
@@ -450,8 +420,6 @@ Every run prints a summary and saves a full decision trace to `observability/log
 }
 ```
 
----
-
 ## ✅ Evaluation
 
 The `evals/` suite validates the system, with each run saving a **timestamped JSON results file** to `evals/results/` (plus a row in `history.md`) as durable evidence.
@@ -471,8 +439,6 @@ python3 evals/eval_parser.py       # free, instant
 python3 evals/eval_memory.py       # free, instant
 python3 evals/eval_extraction.py   # uses Flash-Lite (needs quota)
 ```
-
----
 
 ## 🧩 Course Concepts Demonstrated (6 of 8)
 
@@ -500,8 +466,6 @@ python3 evals/eval_extraction.py   # uses Flash-Lite (needs quota)
 
 > **Minimum requirement: 3 concepts vs. implemented: 6 ✅**
 
----
-
 ## 🎥 Demo Video
 
 📺 **[Watch the Demo on YouTube](https://youtu.be/8YsdOT6R3fs)**
@@ -514,8 +478,6 @@ The demo covers:
 
 *Under 3 minutes.*
 
----
-
 ## 🏆 Competition Details
 
 | Field | Value |
@@ -525,8 +487,6 @@ The demo covers:
 | **Concepts Implemented** | Multi-Agent Systems · Tools · Sessions & Memory · Context engineering · Observability · Agent Evaluation |
 | **Concepts Count** | 6 out of 8 (minimum: 3) |
 | **Bonus Targets** | ✅ Gemini primary model · ✅ YouTube Demo |
-
----
 
 ## 🏁 Conclusion
 
@@ -554,16 +514,12 @@ Rather than replacing M&A team judgment, the engine amplifies it. It handles the
 
 5. **Trust, not black boxes.** Full observability and hallucination guardrails, so every recommendation is traceable and grounded. Nothing is invented. Nothing runs as a black box.
 
----
-
 ## 📄 License
 
 Copyright © 2026 Olga Aksenova.
 
 The code in this repository is licensed under the **[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)** – see
 [LICENSE.md](LICENSE.md) for the full text and [NOTICE.md](NOTICE.md) for attribution.
-
----
 
 *Built for AI Agents: Intensive Vibe Coding Capstone Project · Agents for Business*
 
