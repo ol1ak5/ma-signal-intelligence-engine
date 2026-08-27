@@ -1,6 +1,8 @@
 # ⚡ M&A Signal Intelligence Engine
 ### *Turning Market Chaos into Deal Closing Probability*
 
+---
+
 ## 📌 One-Liner
 
 > *A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations.*
