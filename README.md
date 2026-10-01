@@ -358,12 +358,12 @@ boilerplate. On a normal run the gate is inert. See `agents/_gate.py`.
 
 **Deal close probability:** `high` (≥5 Tier 1) · `medium` (3-4) · `low` (1-2) · `very_low` (no Tier 1).
 
-### 🔗 How agents share data
+## 🔗 How Agents Share Data
 
 | Hand-off | Mechanism |
 |---|---|
 | News → Signal → Buyer Profiling | Conversation context (each agent reads the previous output) |
-| Buyer Profiling → Deal Matching | Profiles emitted as **JSON** via `output_key='buyer_data_raw'`, parsed by the matcher |
+| Buyer Profiling → Deal Matching | Profiles emitted as JSON via `output_key='buyer_data_raw'`, parsed by the matcher |
 | Deal Matching → Strategy | Results persisted via `EventActions(state_delta=…)`, injected into the strategy prompt with `{deal_matching_results}` |
 | Target into the pipeline | Seeded into session state at startup by `run.py` (`target_profile`) |
 
