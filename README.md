@@ -31,7 +31,7 @@ It does not simply summarize news. It answers:
 | 🔇 **Noise Reduction** | Fewer irrelevant outreach contacts wasting deal team bandwidth |
 | 🧠 **Decision Intelligence** | Unstructured news transformed into structured, decision-grade output |
 
-### 🏁 Key Strengths
+## 🔮 Key Strengths
 
 1. **Signal, not noise.** Built on live market intelligence, not static databases and instinct.
 
