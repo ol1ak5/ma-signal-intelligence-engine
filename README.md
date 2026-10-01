@@ -178,7 +178,7 @@ ma-signal-intelligence-agent/
 ├── requirements.txt                ← Python dependencies
 ├── .env.template                   ← Copy to orchestrator/.env, then add your key
 ├── .gitignore
-├── LICENSE.md                      ← Apache License 2.0 (full text)
+├── LICENSE                         ← Apache License 2.0 (full text)
 │
 ├── orchestrator/
 │   ├── __init__.py
@@ -476,6 +476,6 @@ The demo covers:
 Copyright © 2026 Olga Aksenova.
 
 The code in this repository is licensed under the **[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)** – see
-[LICENSE.md](LICENSE.md) for the full text.
+[LICENSE](LICENSE) for the full text.
 
 *Built for AI Agents: Intensive Vibe Coding Capstone Project · Agents for Business*
