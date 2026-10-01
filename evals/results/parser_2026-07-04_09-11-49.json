@@ -1,0 +1,82 @@
+{
+  "eval": "parser",
+  "timestamp": "2026-07-04T09:11:49",
+  "uses_model": false,
+  "passed": 14,
+  "total": 14,
+  "score": 1.0,
+  "threshold": 1.0,
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "clean JSON -> 2",
+      "passed": true,
+      "detail": "got 2, expected 2"
+    },
+    {
+      "name": "fenced ```json``` -> 2",
+      "passed": true,
+      "detail": "got 2, expected 2"
+    },
+    {
+      "name": "prose-wrapped JSON -> 2",
+      "passed": true,
+      "detail": "got 2, expected 2"
+    },
+    {
+      "name": "dict passthrough -> 1",
+      "passed": true,
+      "detail": "got 1, expected 1"
+    },
+    {
+      "name": "garbage -> [] (safe)",
+      "passed": true,
+      "detail": "got 0, expected 0"
+    },
+    {
+      "name": "empty string -> [] (safe)",
+      "passed": true,
+      "detail": "got 0, expected 0"
+    },
+    {
+      "name": "bare JSON array -> 3",
+      "passed": true,
+      "detail": "got 3, expected 3"
+    },
+    {
+      "name": "fenced bare array -> 3",
+      "passed": true,
+      "detail": "got 3, expected 3"
+    },
+    {
+      "name": "list passthrough -> 2",
+      "passed": true,
+      "detail": "got 2, expected 2"
+    },
+    {
+      "name": "truncated object -> [] (safe)",
+      "passed": true,
+      "detail": "got 0, expected 0"
+    },
+    {
+      "name": "truncated bare array -> [] (safe)",
+      "passed": true,
+      "detail": "got 0, expected 0"
+    },
+    {
+      "name": "empty input carries a warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "truncated output carries a warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bare array carries no warning",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

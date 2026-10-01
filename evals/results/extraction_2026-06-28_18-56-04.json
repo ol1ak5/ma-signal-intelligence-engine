@@ -1,0 +1,72 @@
+{
+  "eval": "extraction",
+  "timestamp": "2026-06-28T18:56:04",
+  "uses_model": true,
+  "passed": 12,
+  "total": 12,
+  "score": 1.0,
+  "threshold": 0.8,
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "[1] target_class",
+      "passed": true,
+      "detail": "expected='renewable_portfolio' got='renewable_portfolio'"
+    },
+    {
+      "name": "[1] target_sector",
+      "passed": true,
+      "detail": "expected='energy' got='energy'"
+    },
+    {
+      "name": "[1] target_country",
+      "passed": true,
+      "detail": "expected='Portugal' got='Portugal'"
+    },
+    {
+      "name": "[2] target_class",
+      "passed": true,
+      "detail": "expected='company' got='company'"
+    },
+    {
+      "name": "[2] target_sector",
+      "passed": true,
+      "detail": "expected='TMT' got='TMT'"
+    },
+    {
+      "name": "[2] target_country",
+      "passed": true,
+      "detail": "expected='Germany' got='Germany'"
+    },
+    {
+      "name": "[4] target_class",
+      "passed": true,
+      "detail": "expected='infra' got='infra'"
+    },
+    {
+      "name": "[4] target_sector",
+      "passed": true,
+      "detail": "expected='infra' got='infra'"
+    },
+    {
+      "name": "[4] target_country",
+      "passed": true,
+      "detail": "expected='France' got='France'"
+    },
+    {
+      "name": "[5] target_class",
+      "passed": true,
+      "detail": "expected='company' got='company'"
+    },
+    {
+      "name": "[5] target_sector",
+      "passed": true,
+      "detail": "expected='food_and_beverage' got='food_and_beverage'"
+    },
+    {
+      "name": "[5] target_country",
+      "passed": true,
+      "detail": "expected='Italy' got='Italy'"
+    }
+  ]
+}

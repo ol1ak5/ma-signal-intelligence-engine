@@ -1,0 +1,132 @@
+{
+  "eval": "scoring",
+  "timestamp": "2026-07-04T09:22:33",
+  "uses_model": false,
+  "passed": 24,
+  "total": 24,
+  "score": 1.0,
+  "threshold": 1.0,
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "perfect fit scores 1.0",
+      "passed": true,
+      "detail": "got 1.0"
+    },
+    {
+      "name": "perfect fit not excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "weak financial excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "deleveraging excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "divesting excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "partial fit not excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "partial fit < perfect",
+      "passed": true,
+      "detail": "got 0.55"
+    },
+    {
+      "name": "unknown size handled (no crash)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unknown size -> size_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "empty-string sector focus -> sector_fit low",
+      "passed": true,
+      "detail": "got low"
+    },
+    {
+      "name": "empty-string geography focus -> geography_fit low",
+      "passed": true,
+      "detail": "got low"
+    },
+    {
+      "name": "unknown target country -> geography_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "unknown target sector -> sector_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "no buyer deal-size range -> size_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "investment plan covering target -> size_fit high",
+      "passed": true,
+      "detail": "got high"
+    },
+    {
+      "name": "investment plan below target -> size_fit stays medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "MW target within buyer MW range -> size_fit high",
+      "passed": true,
+      "detail": "got high"
+    },
+    {
+      "name": "MW target far above buyer MW range -> size_fit low",
+      "passed": true,
+      "detail": "got low"
+    },
+    {
+      "name": "no buyer MW data -> EUR fallback -> size_fit high",
+      "passed": true,
+      "detail": "got high"
+    },
+    {
+      "name": "recent comparable deal scores higher than a stale one",
+      "passed": true,
+      "detail": "recent=0.78 stale=0.73"
+    },
+    {
+      "name": "recent buyer gets a recency bonus",
+      "passed": true,
+      "detail": "got 0.05"
+    },
+    {
+      "name": "unknown-financial capacity proxy: deal history beats none",
+      "passed": true,
+      "detail": "prolific=0.66 none=0.61"
+    },
+    {
+      "name": "excluded separated from ranked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ranked sorted desc (Perfect first)",
+      "passed": true,
+      "detail": "order=['Perfect', 'Partial']"
+    }
+  ]
+}

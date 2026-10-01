@@ -1,0 +1,7 @@
+# M&A Signal Intelligence Engine — Python dependencies
+# Install with:  pip install -r requirements.txt
+# (See docs/user_guide.md for what each one is used for.)
+google-adk==2.2.0
+google-genai==2.8.0
+requests==2.34.2
+python-dotenv==1.2.2

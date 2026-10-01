@@ -1,0 +1,87 @@
+{
+  "eval": "scoring",
+  "timestamp": "2026-07-02T23:53:27",
+  "uses_model": false,
+  "passed": 15,
+  "total": 15,
+  "score": 1.0,
+  "threshold": 1.0,
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "perfect fit scores 1.0",
+      "passed": true,
+      "detail": "got 1.0"
+    },
+    {
+      "name": "perfect fit not excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "weak financial excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "deleveraging excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "divesting excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "partial fit not excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "partial fit < perfect",
+      "passed": true,
+      "detail": "got 0.55"
+    },
+    {
+      "name": "unknown size handled (no crash)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unknown size -> size_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "no buyer deal-size range -> size_fit medium",
+      "passed": true,
+      "detail": "got medium"
+    },
+    {
+      "name": "recent comparable deal scores higher than a stale one",
+      "passed": true,
+      "detail": "recent=0.78 stale=0.73"
+    },
+    {
+      "name": "recent buyer gets a recency bonus",
+      "passed": true,
+      "detail": "got 0.05"
+    },
+    {
+      "name": "unknown-financial capacity proxy: deal history beats none",
+      "passed": true,
+      "detail": "prolific=0.66 none=0.61"
+    },
+    {
+      "name": "excluded separated from ranked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ranked sorted desc (Perfect first)",
+      "passed": true,
+      "detail": "order=['Perfect', 'Partial']"
+    }
+  ]
+}

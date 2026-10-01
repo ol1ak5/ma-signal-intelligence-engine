@@ -1,0 +1,42 @@
+{
+  "eval": "memory",
+  "timestamp": "2026-07-04T09:11:50",
+  "uses_model": false,
+  "passed": 6,
+  "total": 6,
+  "score": 1.0,
+  "threshold": 1.0,
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "save 3 -> search all returns 3",
+      "passed": true,
+      "detail": "got 3"
+    },
+    {
+      "name": "filter sector=energy -> 2",
+      "passed": true,
+      "detail": "got 2"
+    },
+    {
+      "name": "filter buyer=iberdrola -> 1",
+      "passed": true,
+      "detail": "got 1"
+    },
+    {
+      "name": "results sorted latest-first",
+      "passed": true,
+      "detail": "first=Solar A"
+    },
+    {
+      "name": "missing ev_eur_m rejected",
+      "passed": true,
+      "detail": "got {'saved': False, 'error': 'target_name, buyer, and ev_eur_m are required'}"
+    },
+    {
+      "name": "rejected save did not persist",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
