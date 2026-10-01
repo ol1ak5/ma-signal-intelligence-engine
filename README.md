@@ -31,7 +31,7 @@ It does not simply summarize news. It answers:
 | 🔇 **Noise Reduction** | Fewer irrelevant outreach contacts wasting deal team bandwidth |
 | 🧠 **Decision Intelligence** | Unstructured news transformed into structured, decision-grade output |
 
-## 🔮 Key Strengths
+## ⭐ Key Strengths
 
 1. **Signal, not noise.** Built on live market intelligence, not static databases and instinct.
 
@@ -179,7 +179,6 @@ ma-signal-intelligence-agent/
 ├── .env.template                   ← Copy to orchestrator/.env, then add your key
 ├── .gitignore
 ├── LICENSE.md                      ← Apache License 2.0 (full text)
-├── NOTICE.md                       ← Attribution notice (Apache 2.0)
 │
 ├── orchestrator/
 │   ├── __init__.py
@@ -477,6 +476,6 @@ The demo covers:
 Copyright © 2026 Olga Aksenova.
 
 The code in this repository is licensed under the **[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)** – see
-[LICENSE.md](LICENSE.md) for the full text and [NOTICE.md](NOTICE.md) for attribution.
+[LICENSE.md](LICENSE.md) for the full text.
 
 *Built for AI Agents: Intensive Vibe Coding Capstone Project · Agents for Business*
