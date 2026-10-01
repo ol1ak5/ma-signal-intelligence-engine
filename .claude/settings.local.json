@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rn \"parent_context\\\\|is_resumable\\\\|branch\\\\b\" /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/google/adk/agents/invocation_context.py | head -50)",
+      "Bash(grep -n \"branch\\\\|InvocationContext\\(\\\\|_new_invocation_context\\\\|def run_async\" -A5 /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/google/adk/tools/agent_tool.py | sed -n '1,150p')",
+      "Bash(grep -n \"before_run\\\\|InvocationContext\\(\\\\|agent=\\\\|new_invocation_context\\\\|_new_invocation_context\" -n /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/google/adk/runners.py | head -60)"
+    ]
+  }
+}

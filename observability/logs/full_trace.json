@@ -1,0 +1,45 @@
+{
+  "run_id": "run_20260705_173144",
+  "target_query": "500MW Solar PV Portfolio",
+  "pipeline_trace": [
+    {
+      "agent": "Agent 1 - News Ingestion",
+      "timestamp": "2026-07-05T17:31:58.209934",
+      "latency_ms": 13581
+    },
+    {
+      "agent": "Agent 2 - Signal Extraction",
+      "timestamp": "2026-07-05T17:32:08.232394",
+      "latency_ms": 10021
+    },
+    {
+      "agent": "Agent 3 - Buyer Profiling",
+      "timestamp": "2026-07-05T17:35:07.246056",
+      "latency_ms": 179013
+    },
+    {
+      "agent": "Agent 4 - Deal Matching",
+      "timestamp": "2026-07-05T17:35:07.253394",
+      "latency_ms": 1
+    },
+    {
+      "agent": "Agent 5 - Strategy",
+      "timestamp": "2026-07-05T17:35:19.992581",
+      "latency_ms": 12738
+    }
+  ],
+  "metrics": {
+    "buyers_profiled": 10,
+    "buyers_scored": 10,
+    "buyers_excluded": 0,
+    "top_match_score": 1.0,
+    "top_buyer": "Ingka Group (IKEA)",
+    "tool_call_counts": {
+      "search_transactions": 10,
+      "google_search_agent": 10,
+      "save_transaction": 4,
+      "convert_to_eur": 5
+    },
+    "pipeline_latency_ms": 215365
+  }
+}
