@@ -33,15 +33,15 @@ It does not simply summarize news. It answers:
 
 ## ⭐ Key Strengths
 
-1. **Signal, not noise.** Built on live market intelligence, not static databases and instinct.
+- **Signal, not noise.** Built on live market intelligence, not static databases and instinct.
 
-2. **Judgment, not guesswork.** Deterministic, auditable scoring that amplifies the deal team, never replaces it. The final call stays in expert hands.
+- **Judgment, not guesswork.** Deterministic, auditable scoring that amplifies the deal team, never replaces it. The final call stays in expert hands.
 
-3. **Automated, not manual.** The pipeline scans, profiles and scores buyers end to end, with no manual steps in between.
+- **Automated, not manual.** The pipeline scans, profiles and scores buyers end to end, with no manual steps in between.
 
-4. **Memory, not a blank slate.** A transaction memory bank that compounds accuracy with every run, building a richer picture of each buyer's sector focus, geography and deal appetite.
+- **Memory, not a blank slate.** A transaction memory bank that compounds accuracy with every run, building a richer picture of each buyer's sector focus, geography and deal appetite.
 
-5. **Trust, not black boxes.** Full observability and hallucination guardrails. Every recommendation is traceable to its source. Nothing is invented.
+- **Trust, not black boxes.** Full observability and hallucination guardrails. Every recommendation is traceable to its source. Nothing is invented.
 
 ## 🚀 Quick Start
 
