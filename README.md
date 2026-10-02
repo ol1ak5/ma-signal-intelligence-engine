@@ -2,7 +2,7 @@
 
 A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations.
 
-## 🎯 Problem
+## 🎯 The Problem
 
 M&A is fundamentally a **signal interpretation problem under uncertainty**. M&A teams fail not because they lack buyers, but because:
 
@@ -14,7 +14,7 @@ M&A is fundamentally a **signal interpretation problem under uncertainty**. M&A 
 
 In practice, **poor buyer targeting** is one of the most common reasons deals fall apart, burning months of hard work, lost fees, and, most importantly, clients' confidence. This is an **intelligence** problem. **AI agents** can solve it.
 
-## 💡 Solution
+## 💡 The Solution
 
 The **M&A Signal Intelligence Engine** is a sequential multi-agent system built with Google ADK and powered by **Gemini 2.5 Flash**. It transforms fragmented market signals into actionable buyer intelligence.
 
