@@ -10,20 +10,20 @@ Deals rarely fail for lack of buyers. They fail because teams call the wrong buy
 
 The M&A Signal Intelligence Engine, built with Google ADK and Gemini 2.5 Flash, reads those signals and finds the right buyers for a given company or asset, explaining the reasoning behind each choice.
 
-## Architecture
+## How It Works?
 
 ```mermaid
-flowchart TD
-    INPUT["Acquisition Request<br>Parsed by Flash-Lite"]
-    A["News Ingestion<br>google_search"]
-    B["Signal Extraction<br>convert_to_eur"]
-    C["Buyer Profiling<br>search, EUR, memory tools"]
-    D["Deal Matching<br>Deterministic scoring, no LLM"]
-    E["Strategy<br>LLM only, tiered outreach"]
-    OUTPUT["Output<br>Tiered buyers · reasoning · close probability · outreach plan"]
+flowchart LR
+    INPUT["Request"]
+    A["News<br>Ingestion"]
+    B["Signal<br>Extraction"]
+    C["Buyer<br>Profiling"]
+    D["Deal<br>Matching"]
+    E["Strategy"]
+    OUTPUT["Ranked buyers<br>+ outreach plan"]
 
-    MEM[("Transaction Memory Bank")]
-    OBS["Observability Plugin<br>Traces · logs · metrics"]
+    MEM[("Memory<br>Bank")]
+    OBS["Observability"]
 
     INPUT --> A --> B --> C --> D --> E --> OUTPUT
     C <--> MEM
@@ -79,29 +79,6 @@ python3 run.py
 # One-shot (quotes required):
 python3 run.py "Find buyers for a distressed German fiber-optic company"
 ```
-
-The terminal will show a summary like this:
-
-```
----------------------------------------------------------
-M&A SIGNAL INTELLIGENCE ENGINE - PIPELINE SUMMARY
----------------------------------------------------------
-Run ID  : run_XXXXXXXX_XXXXXX
-Target  : 500MW Solar PV Portfolio
----------------------------------------------------------
-  Agent 1 - News Ingestion            signals retrieved
-  Agent 2 - Signal Extraction         events classified
-  Agent 3 - Buyer Profiling           XX buyer profiles built
-  Agent 4 - Deal Matching             XX buyers scored (XX excluded)
-    Top buyer: XXX (score: X.X)
-  Agent 5 - Strategy                  recommendation generated
----------------------------------------------------------
-Google Search calls           XX
-Total latency                 XXXXXXms
----------------------------------------------------------
-```
-
-After each run, a full trace is saved to `observability/logs/full_trace.json`, and precedent deals accumulate in `memory/transactions.json`.
 
 ## Project Structure
 
