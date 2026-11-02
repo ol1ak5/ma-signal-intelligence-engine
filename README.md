@@ -8,7 +8,7 @@ A multi-agent system turning fragmented M&A signals into actionable buyer intell
 
 Deals rarely fail for lack of buyers. They fail because teams call the wrong buyers at the wrong time, working from static relationship maps and missing live signals like leverage events, divestments and strategic pivots.
 
-The M&A Signal Intelligence Engine, built with Google ADK and Gemini 2.5 Flash, reads those signals and finds the right buyers for a given company or asset, explaining the reasoning behind each choice. 
+The M&A Signal Intelligence Engine, built with Google ADK and Gemini 2.5 Flash, reads those signals and finds the right buyers for a given company or asset, explaining the reasoning behind each choice.
 
 ## Architecture
 
