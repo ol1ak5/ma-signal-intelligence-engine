@@ -2,7 +2,7 @@
 
 A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations. Watch the Demo on **[YouTube](https://youtu.be/8YsdOT6R3fs)**
 
-> ** Agents for Business - AI Agents: Intensive Vibe Coding Capstone Project
+> **Agents for Business – AI Agents: Intensive Vibe Coding Capstone Project**
 
 ## Why It Matters
 
@@ -53,7 +53,7 @@ cp .env.template orchestrator/.env
 #   GOOGLE_API_KEY="your_gemini_api_key_here"
 ```
 
-> **Security:** `orchestrator/.env` is git-ignored — never commit your key.
+> **Security:** `orchestrator/.env` is git-ignored, so never commit your key.
 
 ### 5. Run the pipeline
 
