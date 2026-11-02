@@ -1,21 +1,34 @@
 # M&A Signal Intelligence Engine
 
-A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations. Watch the Demo on **[YouTube](https://youtu.be/8YsdOT6R3fs)**
+A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations. Watch the Demo on **[YouTube](https://youtu.be/8YsdOT6R3fs)**.
 
 > **Agents for Business – AI Agents: Intensive Vibe Coding Capstone Project**
 
 ## Why It Matters
 
-Deals rarely fail for lack of buyers. They fail because teams call the wrong buyers at the wrong time, working from static relationship maps and missing live signals like leverage events, divestments and strategic pivots. The M&A Signal Intelligence Engine, a sequential multi-agent system built with Google ADK and Gemini 2.5 Flash, reads those signals and answers one question: "Who is actually likely to buy this company right now and why?"
+Deals rarely fail for lack of buyers. They fail because teams call the wrong buyers at the wrong time, working from static relationship maps and missing live signals like leverage events, divestments and strategic pivots.
 
-## Value for M&A Teams
+The M&A Signal Intelligence Engine, built with Google ADK and Gemini 2.5 Flash, reads those signals and finds the right buyers for a given company or asset, explaining the reasoning behind each choice. 
 
-| Outcome | Description |
-|---|---|
-| **Buyer Relevance** | Improved accuracy in identifying the right acquirers for each asset |
-| **Deal Close Probability** | Higher competitive tension through better buyer targeting |
-| **Noise Reduction** | Fewer irrelevant outreach contacts wasting deal team bandwidth |
-| **Decision Intelligence** | Unstructured news transformed into structured, decision-grade output |
+## Architecture
+
+```mermaid
+flowchart TD
+    INPUT["Acquisition Request<br>Parsed by Flash-Lite"]
+    A["News Ingestion<br>google_search"]
+    B["Signal Extraction<br>convert_to_eur"]
+    C["Buyer Profiling<br>search, EUR, memory tools"]
+    D["Deal Matching<br>Deterministic scoring, no LLM"]
+    E["Strategy<br>LLM only, tiered outreach"]
+    OUTPUT["Output<br>Tiered buyers · reasoning · close probability · outreach plan"]
+
+    MEM[("Transaction Memory Bank")]
+    OBS["Observability Plugin<br>Traces · logs · metrics"]
+
+    INPUT --> A --> B --> C --> D --> E --> OUTPUT
+    C <--> MEM
+    A & B & C & D & E -.-> OBS
+```
 
 ## Quick Start
 
@@ -67,7 +80,7 @@ python3 run.py
 python3 run.py "Find buyers for a distressed German fiber-optic company"
 ```
 
-**Expected terminal output:**
+The terminal will show a summary like this:
 
 ```
 ---------------------------------------------------------
@@ -90,83 +103,19 @@ Total latency                 XXXXXXms
 
 After each run, a full trace is saved to `observability/logs/full_trace.json`, and precedent deals accumulate in `memory/transactions.json`.
 
-## Architecture
-
-```mermaid
-flowchart TD
-    INPUT["Acquisition Request<br>Parsed by Flash-Lite"]
-    A["News Ingestion<br>google_search"]
-    B["Signal Extraction<br>convert_to_eur"]
-    C["Buyer Profiling<br>search, EUR, memory tools"]
-    D["Deal Matching<br>Deterministic scoring, no LLM"]
-    E["Strategy<br>LLM only, tiered outreach"]
-    OUTPUT["Output<br>Tiered buyers · reasoning · close probability · outreach plan"]
-
-    MEM[("Transaction Memory Bank")]
-    OBS["Observability Plugin<br>Traces · logs · metrics"]
-
-    INPUT --> A --> B --> C --> D --> E --> OUTPUT
-    C <--> MEM
-    A & B & C & D & E -.-> OBS
-```
-
 ## Project Structure
 
 ```
 ma-signal-intelligence-agent/
-│
-├── run.py                          ← Entry point (interactive + CLI; Flash-Lite request extraction)
-├── requirements.txt                ← Python dependencies
-├── .env.template                   ← Copy to orchestrator/.env, then add your key
-├── .gitignore
-├── LICENSE                         ← Apache License 2.0 (full text)
-│
-├── orchestrator/
-│   ├── __init__.py
-│   ├── agent.py                    ← SequentialAgent + App + Runner + SessionService + plugin + compaction
-│   ├── compaction.py               ← TruncatingSummarizer (deterministic context compaction, no LLM)
-│   └── .env                        ← API key (git-ignored)
-│
-├── agents/                         ← Individual agent definitions
-│   ├── __init__.py
-│   ├── _gate.py                    ← Cost gate (skips dead-end model calls)
-│   ├── news_ingestion_agent.py     ← Agent 1: google_search
-│   ├── signal_extraction_agent.py  ← Agent 2: M&A signal classification (convert_to_eur)
-│   ├── buyer_profiling_agent.py    ← Agent 3: buyer profiles + memory (search/save) + retry loop
-│   ├── deal_matching_agent.py      ← Agent 4: deterministic scoring (no LLM)
-│   └── strategy_agent.py           ← Agent 5: tiered outreach strategy
-│
-├── tools/                          ← Custom tool definitions
-│   ├── __init__.py
-│   ├── buyer_scoring_tool.py       ← Weighted match score + hard exclusion rules
-│   └── currency_tool.py            ← Live EUR conversion via ECB daily reference rates
-│
-├── skills/                         ← Shared prompt utilities
-│   ├── __init__.py
-│   └── anti_hallucination.py       ← Parametric anti-hallucination rules appended to LLM agents
-│
-├── memory/                         ← Long-term precedent-deal memory
-│   ├── __init__.py
-│   ├── transaction_store.py        ← save_transaction / search_transactions (JSON persistence)
-│   └── transactions.json           ← Accumulated precedent deals (auto-generated)
-│
-├── observability/                  ← Logging, tracing, metrics
-│   ├── __init__.py
-│   ├── tracer.py                   ← PipelineTracer: logging · tracing · metrics
-│   ├── tracing_plugin.py           ← ADK plugin wiring the tracer to the App
-│   └── logs/full_trace.json        ← Full decision trace per run (auto-generated)
-│
-├── evals/                          ← Evaluation suite
-│   ├── eval_scoring.py             ← Deterministic scoring (no model)
-│   ├── eval_parser.py              ← JSON parser robustness (no model)
-│   ├── eval_memory.py              ← Long-term memory round-trip (no model)
-│   ├── eval_extraction.py          ← Prompt → target extraction (Flash-Lite)
-│   └── results/                    ← Timestamped JSON evidence + history.md
-│
-└── docs/
-    ├── user_guide.md               ← Full usage guide
-    ├── sample_run.md               ← Annotated end-to-end example run
-    └── glossary.md                 ← M&A and pipeline terminology
+├── run.py           ← Entry point (interactive + CLI)
+├── orchestrator/    ← SequentialAgent, App, sessions, context compaction
+├── agents/          ← The five pipeline agents
+├── tools/           ← Buyer scoring and EUR conversion
+├── skills/          ← Anti-hallucination prompt rules
+├── memory/          ← Transaction Memory Bank (JSON)
+├── observability/   ← Tracing plugin, logs, metrics
+├── evals/           ← Eval suite and saved results
+└── docs/            ← User guide, sample run, glossary
 ```
 
 ## Course Concepts Demonstrated (6 of 8)
