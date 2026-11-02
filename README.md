@@ -10,7 +10,7 @@ Deals rarely fail for lack of buyers. They fail because teams call the wrong buy
 
 The M&A Signal Intelligence Engine, built with Google ADK and Gemini 2.5 Flash, reads those signals and finds the right buyers for a given company or asset, explaining the reasoning behind each choice.
 
-## How It Works?
+## How It Works
 
 ```mermaid
 flowchart LR
