@@ -2,7 +2,7 @@
 
 A multi-agent system turning fragmented M&A signals into actionable buyer intelligence, from data ingestion to strategic recommendations. Watch the Demo on **[YouTube](https://youtu.be/8YsdOT6R3fs)**.
 
-> **Agents for Business – AI Agents: Intensive Vibe Coding Capstone Project**
+> **Track:** Agents for Business – AI Agents: Intensive Vibe Coding Capstone Project
 
 ## Why It Matters
 
@@ -40,8 +40,8 @@ flowchart LR
 ### 1. Clone & enter
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ma-signal-intelligence-agent.git
-cd ma-signal-intelligence-agent
+git clone https://github.com/ol1ak5/ma-signal-intelligence-engine.git
+cd ma-signal-intelligence-engine
 ```
 
 ### 2. Virtual environment
@@ -83,7 +83,7 @@ python3 run.py "Find buyers for a distressed German fiber-optic company"
 ## Project Structure
 
 ```
-ma-signal-intelligence-agent/
+ma-signal-intelligence-engine/
 ├── run.py           ← Entry point (interactive + CLI)
 ├── orchestrator/    ← SequentialAgent, App, sessions, context compaction
 ├── agents/          ← The five pipeline agents
@@ -121,7 +121,7 @@ ma-signal-intelligence-agent/
 
 > **Minimum requirement: 3 concepts vs. implemented: 6 ✅**
 
-## 📄 License
+## License
 
 Copyright © 2026 Olga Aksenova.
 
